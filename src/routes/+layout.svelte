@@ -1,23 +1,24 @@
 <script>
-	import Header from './Header.svelte';
 	import './styles.css';
-
-	import { Utterances } from "@codewithshin/svelte-utterances";
-
-	const repo = 'CiaranOtter/forum_test.git';
 </script>
 
 <div class="app">
-	<Header />
 
 	<main>
 		<slot />
+		<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
+	<div id="fastcomments-widget"></div>
+	<script>
+	window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+		"tenantId": "demo"
+	});
+	</script>
 	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
 </div>
+
+
+
+
 
 <style>
 	.app {
